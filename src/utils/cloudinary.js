@@ -14,7 +14,7 @@ import fs from 'fs';
         try {
             if (!localFilePath) return null
             //upload the file to cloudinary 
-             await cloudinary.uploader.upload(localFilePath,{
+             const response =  await cloudinary.uploader.upload(localFilePath,{
                 resource_type : "auto"
             })
             //file uploaded successfully
@@ -27,3 +27,5 @@ import fs from 'fs';
         }
 
     }
+
+    export { uploadonCloudinary }
